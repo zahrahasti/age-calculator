@@ -24,17 +24,32 @@
 		<meta name="twitter:image" content="" />
 		<meta property="twitter:image:alt" content="Online Age Calculator" />
 	</head>
-	<body>
-		<section class="container--claculator">
-			<form class="form">
-				<fieldset class="container--claculator__inputs">
-					<div class="container--input">
-						<label>DAY</label>
-						<input type="text" placeholder="DD" id="day" name="day" pattern="^[۰-۹0-9]+$" maxlength="2" data-day-value />
-						<p data-day-error></p>
-					</div>
-					<div class="container--input">
-						<label>MONTH</label>
+	<body class="bg-bg-body  h-svh mx-auto flex justify-center items-center">
+		<main class="bg-white  w-11/12 md:w-4/5 lg:w-1/2   p-8 rounded-2xl rounded-br-[5rem]">
+			<form class="w-full" id="calulator__form">
+				<div class="border-b relative flex  md:gap-12  max-md:flex-col items-center border-border">
+      	<fieldset class="flex justify-between pb-2 gap-5 w-full">
+						<label class="text-md">
+							<span class="text-text-muted font-semibold md:font-bold tracking-[4px]  text-xs">
+	                    DAY
+							</span>
+						<input
+							type="text"
+							placeholder="DD"
+							id="day"
+							name="day"
+							pattern="^[۰-۹0-9]+$"
+							maxlength="2"
+							class="border md:text-xl font-bold focus:outline-primary active:outline-primary focus:border-primary active:border-primary p-2 text-black rounded-md border-border w-full"
+							data-day-value
+						/>
+						<p class="text-error h-5 text-[10px] p-1 font-thin"  data-day-error></p>
+			</label>
+
+						<label class="input-group__label">
+							<span class="text-text-muted font-semibold md:font-bold tracking-[4px]  text-xs">
+	                    MONTH
+							</span>
 						<input
 							type="text"
 							placeholder="MM"
@@ -42,14 +57,17 @@
 							name="month"
 							pattern="^[۰-۹0-9]+$"
 							title="enter 2 digit"
-							data-id="2"
 							maxlength="2"
+							class="border md:text-xl font-bold focus:outline-primary active:outline-primary focus:border-primary active:border-primary p-2 text-black rounded-md border-border w-full"
 							data-month-value
 						/>
-						<p data-month-error></p>
-					</div>
-					<div class="container--input">
-						<label>YEAR</label>
+						<p class="text-error  h-5 text-[10px]  text-xs p-1 font-thin"   data-month-error></p>
+			</label>
+
+						<label class="input-group__label">
+								<span class="text-text-muted font-semibold md:font-bold tracking-[4px]  text-xs">
+	                    YEAR
+						  	</span>
 						<input
 							type="text"
 							placeholder="YYYY"
@@ -59,29 +77,36 @@
 							maxlength="4"
 							minlength="4"
 							title="enter 4 digit"
-							data-id="3"
+							class="border md:text-xl font-bold focus:outline-primary active:outline-primary focus:border-primary active:border-primary p-2 text-black rounded-md border-border w-full"
 							data-year-value
 						/>
-						<p data-year-error></p>
-					</div>
-
-					<!-- <input type="submit" class="submit"> -->
-					<button type="submit" class="submit">
+						<p class="text-error  h-5 text-[10px]  text-xs p-1 font-thin"   data-year-error></p>
+					</label>
+				</fieldset>
+				<button type="submit" class="bg-primary  p-2.5 translate-y-1/2 md:mt-10 aspect-square rounded-full">
 						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="27" viewBox="0 0 46 44">
 							<g fill="none" stroke="#FFF" stroke-width="2">
 								<path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
 							</g>
 						</svg>
 					</button>
-				</fieldset>
-
-				<div class="show--age">
-					<h1><span class="text-year">--</span>years</h1>
-					<h1><span class="text-month">--</span>months</h1>
-					<h1><span class="text-day">--</span>days</h1>
 				</div>
+				<output class="space-y-2 text-4xl md:text-5xl font-bold py-10 block">
+					<p class="result-item">
+						<span class="text-primary" id="year-output">--</span>
+					  years
+					</p>
+					<p class="result-item">
+					<span class="text-primary" id="month-output">--</span>
+					  months
+					</p>
+					<p class="result-item">
+					<span class="text-primary" id="day-output">--</span>
+					  days
+					</p>
+				</output>
 			</form>
-		</section>
-		<script type="module" src="/src/assets/main.ts"></script>
+		</main>
+		<script type="module" src="/src/main.ts"></script>
 	</body>
 </html>
